@@ -23,7 +23,7 @@ class DataIngestion:
         try:
             df = pd.read_csv("notebook\data\stud.csv")
             # Replace spaces with underscores
-            df.columns = df.columns.str.replace(' ', '_')
+            df.columns = df.columns.str.replace(' ', '_').str.replace('/', '_')
             logging.info("Read the data as a dataframe")
             os.makedirs(os.path.dirname(self.ingestion_config.data_path), exist_ok=True)
             df.to_csv(self.ingestion_config.data_path, index=False, header=True)
