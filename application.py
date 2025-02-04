@@ -1,4 +1,5 @@
 ## Same as app.py for deployment in AWS Elasticbeanstalk
+## When deploying remove the app.py file from github
 
 from flask import Flask, request, render_template
 import numpy as np
